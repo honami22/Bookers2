@@ -1,2 +1,23 @@
 <h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
+ <%= flash[:notice] %>
+ <%= flash[:alert] %>
+
+  <% @books.each do | book | %>
+<table>
+    <tr>
+        <td><h3>Title:</h3></td>
+        <td><p><%= book.title %></p></td>
+    <tr> <td><h3>Body:</h3></td>
+        <td> <p><%= book.body %></p></td>
+    </tr>
+</table>
+   <td><%= link_to "Edit", edit_book_path(book.id) %></td>
+   <td><%= link_to "Destroy",show_book_path(book.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+  </tr>
+
+<div class="botan">
+ <%= link_to "Edit",edit_book_path(@book.id) %>
+ |
+ <%= link_to "Back", "/books" %>
+ <% end %>
+</div>
