@@ -1,13 +1,2 @@
 <h1>Books#show</h1>
- <%= flash[:notice] %>
- <%= flash[:alert] %>
- <%= form_with model: @book, url: '/books', method: :post do |f| %>
-<h3>Title:</h3>
-   <%= @book.title %>
-<h3>Body:</h3>
-   <%= @book.body %>
-
-   <<%= link_to "Edit", edit_book_path(@book.id) %>
-   <%= link_to "Destroy",show_book_path(@book.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" %>
-
-   <% end %>
+<p>Find me in app/views/books/show.html.erb</p>
