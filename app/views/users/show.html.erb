@@ -1,0 +1,13 @@
+<h1>Users#show</h1>
+<p>Find me in app/views/users/show.html.erb</p>
+<main>
+    <div>
+        <h1>User info</h1>
+
+        <%= image_tag @user.get_profile_image(100,100) %><br>
+        <h3>name <%= @user.name %></h3>
+        <h3>introduction <%= @user.user_introduction %></h3>
+        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+    </div>
+    <%= render 'user', books: @books %>
+</main>
