@@ -1,3 +1,19 @@
 <h1>Books#new</h1>
-<p>Find me in app/views/books/new.html.erb</p>
-<%= render 'users/user', books: @books %>
+
+
+
+    <%= form_with model: @book, url: '/books', method: :post do |book| %>
+<table>
+    <tr>
+        <td><h3>Title:</h3></td>
+        <td><p><%= @book.title %></p></td>
+    <tr> <td><h3>Body:</h3></td>
+        <td> <p><%= @book.body %></p></td>
+    </tr>
+</table>
+
+   <td><%= link_to "Destroy",books_path(@book.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
+  </tr>
+
+
+ <% end %>
