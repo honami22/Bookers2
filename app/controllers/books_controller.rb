@@ -1,5 +1,10 @@
 class BooksController < ApplicationController
 before_action :correct_user,   only: [:edit, :update, :destroy]
+  def new
+     @book = Book.new
+    @books = Book.all
+    @user = @books
+  end
 
   def get_image
     unless image.attached?
@@ -19,15 +24,13 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
 
 
   def index
-    @book = Book.new
+    @book_new = Book.new
     @books = Book.all
 
-    @user = @books
   end
 
   def show
-
-   @book_new=Book.new
+   @book_new = Book.new
    @books = Book.all
    @book = Book.find(params[:id])
 
@@ -46,7 +49,7 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
         # 保存に失敗したとき
     flash[:alert] = "errors prohibited this book from being saved:"
     @books = Books.all
-    render :books_path
+    render :edit_book_path
    end
   end
 
@@ -54,12 +57,7 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
     @book = Book.find(params[:id])
     @book.user_id = current_user.id
     @book.destroy
-    redirect_to new_book_path
-  end
-
-  def new
-    @book = Book.new
-    @books = Book.all
+    redirect_to books_path
   end
 
     def correct_user

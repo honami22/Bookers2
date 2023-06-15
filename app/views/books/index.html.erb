@@ -1,12 +1,9 @@
 <h1>Books#index</h1>
+<% @books.each do |book| %>
 <div>
-        <h2>New book</h2>
+  <p>title:<%= book.title %></p>
+  <p>Body:<%= book.body%></p>
 
-        <%= form_with model: @book, url: '/books', method: :post do |f| %>
-            <p>Title</p><%= f.text_field :title %>
-            <p>Opinion</p><%= f.text_area :body %>
-
-            <br><%= f.submit 'Create Book' %>
-        <% end %>
 </div>
 
+<% end %>
