@@ -1,7 +1,5 @@
 class BooksController < ApplicationController
-  def new
-    @book = Book.new
-  end
+before_action :correct_user,   only: [:edit, :update, :destroy]
 
   def get_image
     unless image.attached?
@@ -11,36 +9,72 @@ class BooksController < ApplicationController
     image
   end
 
+   # 投稿データの保存
   def create
-    @book = Book.new
-
+    @book = Book.new(book_params)
+    @book.user_id = current_user.id
     @book.save
-    redirect_to new_book_path(@book.id)
+    redirect_to book_path(@book.id)
   end
 
+
   def index
+    @book = Book.new
     @books = Book.all
+
     @user = @books
   end
 
   def show
-    @book = Book.find(params[:id])
-    @user = @book
+
+   @book_new=Book.new
+   @books = Book.all
+   @book = Book.find(params[:id])
+
   end
 
   def edit
     @book = Book.find(params[:id])
   end
 
+  def update
+    @book = Book.find(params[:id])
+   if  @book.update(book_params)
+    flash[:notice] = "Book was successfully created."
+    redirect_to book_path(@book.id)
+   else
+        # 保存に失敗したとき
+    flash[:alert] = "errors prohibited this book from being saved:"
+    @books = Books.all
+    render :books_path
+   end
+  end
+
   def destroy
     @book = Book.find(params[:id])
+    @book.user_id = current_user.id
     @book.destroy
-    redirect_to books_path
+    redirect_to new_book_path
   end
+
+  def new
+    @book = Book.new
+    @books = Book.all
+  end
+
+    def correct_user
+      @book = Book.find(params[:id])
+      redirect_to(books_path) unless current_user?(@book.user)
+    end
+
+    def current_user?(user)
+      user == current_user
+    end
 
   private
 
   def book_params
-    params.require(:books).permit(:title, :body, :user_id)
+    params.require(:book).permit(:title, :body)
+
   end
 end

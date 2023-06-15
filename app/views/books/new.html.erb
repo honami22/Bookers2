@@ -1,19 +1,10 @@
 <h1>Books#new</h1>
 
+<% @book.each do |book| %>
+<div>
+  <p>title:<%= f.text_field :title %></p>
+  <p>Body:<%= f.text_area :body%></p>
+  <p>ユーザーネーム：<%= @book.user.name %></p>
+</div>
 
-
-    <%= form_with model: @book, url: '/books', method: :post do |book| %>
-<table>
-    <tr>
-        <td><h3>Title:</h3></td>
-        <td><p><%= @book.title %></p></td>
-    <tr> <td><h3>Body:</h3></td>
-        <td> <p><%= @book.body %></p></td>
-    </tr>
-</table>
-
-   <td><%= link_to "Destroy",books_path(@book.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
-  </tr>
-
-
- <% end %>
+<% end %>

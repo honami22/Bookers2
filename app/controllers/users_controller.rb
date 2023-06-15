@@ -1,16 +1,4 @@
 class UsersController < ApplicationController
-#   def new
-#   end
-
-#   def index
-#   end
-
-#   def show
-#   end
-
-#   def edit
-#   end
-# end
 
   before_action :correct_user, only: [:edit, :update]
   def show
@@ -42,7 +30,7 @@ class UsersController < ApplicationController
     end
   end
   def user_params
-    params.require(:users).permit(:name, :profile_image, :user_introduction, :user_id)
+    params.require(:users).permit(:name,:user_introduction, :user_id)
   end
 
 end
