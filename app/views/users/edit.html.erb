@@ -3,11 +3,14 @@
 <main>
     <div>
         <h1>User info</h1>
+         <%= form_with model: @user do |f| %>
 
-        <%= image_tag @user.get_profile_image(100,100) %><br>
-        <h3>name <%= @user.name %></h3>
-        <h3>introduction <%= @user.user_introduction %></h3>
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+        <h3>name <%= f.text_field:name %></h3>
+        <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
+        <h3>introduction</h3>
+         <%= f.text_field :introduction %>
+         <%= f.submit 'Update user' %>
+        <% end %>
     </div>
-    <%= render 'user', books: @books %>
+
 </main>

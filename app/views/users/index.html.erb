@@ -1,2 +1,17 @@
 <h1>Users#index</h1>
 <p>Find me in app/views/users/index.html.erb</p>
+
+
+<!-- ユーザーの投稿一覧 -->
+
+<% @users.each do |user| %>
+<div>
+
+    <%= image_tag user.get_profile_image(100,100) %><br>
+    <h3>name:<%= user.name %></h3>
+    <h3>introduction:<%= user.introduction %></h3>
+  <% end %>
+
+
+</div>
+
