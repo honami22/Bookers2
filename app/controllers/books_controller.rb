@@ -18,17 +18,16 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
 
 
   def index
-    @book_new = Book.new
+
     @books = Book.all
 
   end
 
+
   def show
    @book_new = Book.new
-
-   @books = Book.all
    @book = Book.find(params[:id])
-
+   @user = @book.user
   end
 
   def edit
@@ -67,7 +66,7 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
   private
 
   def book_params
-    params.require(:book).permit(:title, :body)
+    params.require(:book).permit(:title, :body, :profile_image)
 
   end
 end
