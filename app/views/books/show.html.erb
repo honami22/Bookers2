@@ -1,24 +1,10 @@
-<h1>Books#new</h1>
-<div><div>
-        <h1>User info</h1>
-         <%= form_with model: @user, url: '/users', method: :post do |f| %>
-        <%= image_tag @user.get_profile_image(100,100) %><br>
-        <h3>name <%= @user.name %></h3>
-        <h3>introduction <%= @user.introduction %></h3>
-        <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
-    </div>
+<%= link_to "Users", users_path %>
+<%= link_to "Books", books_path %>
 
 
-    <% end %>
-        <h2>New book</h2>
+<%= render 'users/user', user: @user %>
 
-        <%= form_with model: @book, url: '/books', method: :post do |f| %>
-            <p>Title</p><%= f.text_field :title %>
-            <p>Opinion</p><%= f.text_area :body %>
-
-            <br><%= f.submit 'Create Book' %>
-        <% end %>
-</div>
+<%= render 'books/book', book: @book %>
 
 <h1>Books#show</h1>
 <!--<p>Find me in app/views/books/show.html.erb</p>-->
@@ -38,6 +24,6 @@
      <% if @book.user == current_user %>
   <td><%= link_to "Destroy",book_path(@book.id) ,method: :delete, "data-confirm" => "本当に削除しますか？" %></td>
   <% end %>
-  
+
 
 </div>

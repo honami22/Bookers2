@@ -1,12 +1,10 @@
 class BooksController < ApplicationController
-before_action :correct_user,   only: [:edit, :update, :destroy]
+# before_action :correct_user,   only: [:edit, :update, :destroy]
   def new
      @book = Book.new
     @books = Book.all
     @user = @books
   end
-
-
 
    # 投稿データの保存
   def create
@@ -20,7 +18,7 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
   def index
 
     @books = Book.all
-
+    @user = current_user
   end
 
 
@@ -66,7 +64,7 @@ before_action :correct_user,   only: [:edit, :update, :destroy]
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :profile_image)
+    params.require(:book).permit(:title, :body)
 
   end
 end
