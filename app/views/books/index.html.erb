@@ -1,16 +1,17 @@
-<%= link_to "Users", users_path %>
-<%= link_to "Books", books_path %>
 
 <%= render 'users/user', user: @user %>
 
 <%= render 'books/book', book: @book %>
 
 <h1>Books#index</h1>
+<div class ="col-md-8 offset-md-1">
+<h2>Books</h2>
+<table class="table table-hover table-inverse">
 <% @books.each do |book| %>
 <div>
   <p>title:<%= book.title %></p>
   <p>Body:<%= book.body%></p>
-
+</table>
 </div>
-
+</div>
 <% end %>
