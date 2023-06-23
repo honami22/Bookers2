@@ -1,14 +1,16 @@
-<h1>Users#edit</h1>
-<!--<p>Find me in app/views/users/edit.html.erb</p>-->
-<main>
-    <div>
-        <h1>User info</h1>
+        <p id="notice"></p>
+        <div class='container'>
+  <div class='row'>
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+        <h1>User  info</h1>
          <%= form_with model: @user do |f| %>
 
-        <h3>name <%= f.text_field:name %></h3>
-        <%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %>
+        <h3>name</h3>
+        <h3><%= f.text_field:name %></h3>
+        <h3>Image<%= f.file_field :profile_image, placeholder: "Image", accept: "image/*" %></h3>
         <h3>introduction</h3>
-         <%= f.text_field :introduction %>
+        <h1><%= f.text_field :introduction %></h1>
+        <br>
          <%= f.submit 'Update user' %>
         <% end %>
     </div>

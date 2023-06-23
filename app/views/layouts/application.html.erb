@@ -6,7 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/756069d44a.js" crossorigin="anonymous"></script>
- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -28,31 +28,31 @@
             <% if user_signed_in? %>
             <li class="nav-item">
           <li>
-          <%= link_to "Home",root_path %>
+          <i class="fa-solid fa-house"></i><%= link_to "Home",books_path %></i>
          </li>
         <li>
-         <%= link_to "Users", users_path %>
+         <i class="fa-duotone fa-user"></i><%= link_to "Users", users_path %>
          </li>
          <li>
-            <%= link_to "Books", books_path %>
+          <i class="fa-solid fa-book-quran"></i><%= link_to "Books", books_path %></i>
           </li>
       <li>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+       <i class="fa-regular fa-moon"></i> <%= link_to "Log out", destroy_user_session_path, method: :delete %>
       </li>
 
      <% else %>
     <li>
-    <%= link_to "Home",root_path %>
+    <i class="fa-solid fa-house"></i><%= link_to "Home",root_path %>
     </li>
     <li>
-      <%= link_to "About",about_path %>
+      <i class="fa-regular fa-thumbs-up"></i><%= link_to "About",about_path %>
     </li>
 
       <li>
-        <%= link_to "Sign up", new_user_registration_path %>
+        <i class="fa-regular fa-star"></i><%= link_to "Sign up", new_user_registration_path %>
       </li>
       <li>
-        <%= link_to "Log in", new_user_session_path %>
+       <i class="fa-regular fa-heart"></i><%= link_to "Log in", new_user_session_path %>
       </li>
         </div>
               </div>
@@ -70,9 +70,9 @@
     <footer class="bg-white text-dark pt-5 pb-4">
       <div class="container">
         <div class="row no-gutters">
-          <div class="col-md-4">
+          <div class="col-md-5">
           </div>
-          <div class="col-md-8">
+          <div class="col-md-7">
             <h6 class="text-dark mt-2 mb-3">CopyRight Infratop.inc</h6>
             <ul class="p-0 list-unstyled">
               <li>
