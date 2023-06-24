@@ -1,21 +1,28 @@
-        <p id="notice"></p>
-        <div class='container'>
+
+  <p id="notice"></p>  <%= flash[:notice] %>
+  <div class='container'>
   <div class='row'>
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-
-
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
   <h2>Editing Book</h2>
-  <%= flash[:notice] %>
- <%= form_with model: @book, url: '/books', method: :post do |f| %>
+  <% if @book.errors.any? %>
+   <%= @book.errors.count %>error prohibited this obj from being saved:
+    <ul>
+     <% @book.errors.full_messages.each do |message| %>
+     <li><%= message %></li>
+     <% end %>
+  </ul>
+  <% end %>
+ <%= form_with model: @book do |f| %>
   <h4>Title</h4>
-  <%= f.text_field :title %>
-  <h4>Opinion</h4>
-  <%= f.text_area :body%>
+   <%= f.text_field :title %>
+   <h4>Opinion</h4>
+    <%= f.text_area :body%>
    <p>ユーザーネーム：<%= @book.user.name %></p>
-
   </br>
   <%= f.submit 'Update Book' %>
+  <br>
    <td><%= link_to "Show", books_path %></td>
+   |
   <td><%= link_to "Books", books_path %></td>
   <% end %>
 </div>
