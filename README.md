@@ -22,3 +22,12 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+# DMM WEBCAMPコンテンツ【アプリケーションを完成させよう２】
+
+DMM WEBCAMPの学習コンテンツruby on Railsでの課題3です。
+課題3：アプリケーションを作成してみよう：応用編
+
+bookers2に投稿機能や[devise]を使ってログインやid機能などを追加したもの。
+
+使い方
+html/cssファイルのため、PCのブラウザで実行できます。
