@@ -165,7 +165,7 @@ Userモデルのテスト
 [31m      bodyフォームが表示される (FAILED - 67)[0m
 [31m      bodyフォームに値が入っていない (FAILED - 68)[0m
 [31m      Create Bookボタンが表示される (FAILED - 69)[0m
-  自分のユーザ詳細画面のテスト
+  ���分のユーザ詳細画面のテスト
     表示の確認
 [31m      URLが正しい (FAILED - 70)[0m
 [31m      投稿一覧のユーザ画像のリンク先が正しい (FAILED - 71)[0m
@@ -790,7 +790,7 @@ Failures:
      [36m#   undefined method `errors' for nil:NilClass[0m
      [36m#   ./app/views/users/show.html.erb:2:in `_app_views_users_show_html_erb__4236527537257459571_24120'[0m
 
-  10) [STEP1] ユーザログイン前のテスト ユーザログアウトのテスト ログアウト機能のテスト ログアウト後のリダイレクト先が、トップになっている
+  10) [STEP1] ユーザログイン前のテスト ��ーザログアウトのテスト ログアウト機能のテスト ログアウト後のリダイレクト先が、トップになっている
       [31mFailure/Error: <% if @book.errors.any? %>[0m
       [31m[0m
       [31mActionView::Template::Error:[0m
@@ -8366,7 +8366,7 @@ Failed examples:
 [31mrspec ./spec/system/02_after_login_spec.rb:177[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 編集リンクのテスト 編集画面に遷移する[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:184[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト application.html.erbにjavascript_pack_tagを含んでいる[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:198[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト 正しく削除される[0m
-[31mrspec ./spec/system/02_after_login_spec.rb:201[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿一覧画面になっている[0m
+[31mrspec ./spec/system/02_after_login_spec.rb:201[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿詳細画面のテスト 削除リンクのテスト リダイレクト先が、投稿���覧画面になっている[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:213[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 URLが正しい[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:216[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 「Editing Book」と表示される[0m
 [31mrspec ./spec/system/02_after_login_spec.rb:219[0m [36m# [STEP2] ユーザログイン後のテスト 自分の投稿編集画面のテスト 表示の確認 title編集フォームが表示される[0m
